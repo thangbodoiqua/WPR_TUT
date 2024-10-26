@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="">
+    <button
+      id="btn"
+      style="
+        width: 100px;
+        height: 50px;
+        display: block; /* Đặt button thành phần tử dạng khối */
+        margin: 0 auto; /* Căn giữa theo chiều ngang */
+      "
+    >
+      Stop
+    </button>
+    <div id="content" style="text-align: center">
+      Promise resolved in 5 seconds
+    </div>
+
+    <script>
+      var promise = new Promise((resolve, reject) => {
+        counter(resolve, reject);
+      });
+
+      function counter(resolve, reject) {
+        var count = document.querySelector("#content");
+
+        document.querySelector("#btn").addEventListener("click", () => {
+          clearInterval(counter);
+          reject("Promise  has failed to resolve");
+        });
+
+        let i = 4;
+        var counter = setInterval(() => {
+          if (i == 0) {
+            clearInterval(counter);
+            resolve("Promise  has  resolved");
+          } else {
+            count.innerHTML = `Promise resolved in ${i} seconds`;
+            --i;
+          }
+        }, 1000);
+      }
+
+      promise
+        .then((message) => {
+          document.querySelector("#content").innerHTML = message;
+        })
+        .catch((error) => {
+          document.querySelector("#content").innerHTML = error;
+        });
+    </script>
+  </body>
+</html>
