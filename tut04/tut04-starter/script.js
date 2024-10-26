@@ -4,8 +4,7 @@
 
 "use strict";
 (function() {
-
-  // Initialize event listeners when the page loads
+  window.addEventListener("load", init());
 
   /**
    * Sets up event listeners for the page elements
@@ -13,6 +12,8 @@
    *   that triggers the loadData function
    */
   function init() {
+    let btn = id("loadDataButton");
+    btn.addEventListener("click", loadData)
   }
 
   /**
@@ -26,10 +27,27 @@
    */
   function loadData() {
     // Define the JSON object with sample data
-
-
+    const data = {
+      "person": [
+        { name: "Alice", age: 30, country: "USA" },
+        { name: "Bob", age: 25, country: "UK" },
+        { name: "Charlie", age: 35, country: "Canada" }
+      ]
+  }
+    
     // Prepare to show countdown and data
-
+    let i = 3;
+    let content = id("dataContainer");
+    var itv = setInterval(() => {
+      if (i == 0) { 
+        clearInterval(itv);
+        displayData(data);
+      } else {
+        content.innerHTML = `Loading data in <span style = \"color: red;\">${i}</span> seconds..`;
+        i--;  
+      }
+      
+    },1000)
 
     // Update countdown every second
 
@@ -44,7 +62,7 @@
    * @param {object} data - The JSON data to be displayed
    */
   function displayData(data) {
-
+    console.log("hello")
   }
 
   /**
