@@ -62,7 +62,15 @@
    * @param {object} data - The JSON data to be displayed
    */
   function displayData(data) {
-    console.log("hello")
+    let showData = id("dataContainer");
+    showData.innerHTML = "";
+    for (let i = 0; i < data.person.length; i++){
+      let item = gen("div");
+      let personi = data.person[i]
+      item.innerHTML = `name: ${personi.name}, age: ${personi.age}, country: ${personi.country}`;
+      showData.innerHTML += `<div>{${item.innerHTML}}</div>`;
+    }
+    showData.innerHTML
   }
 
   /**
