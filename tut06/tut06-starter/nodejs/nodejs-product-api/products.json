@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Mouse",
+        "price": 29.99,
+        "description": "A sleek wireless mouse with ergonomic design and long battery life.",
+        "category": "Electronics",
+        "stock": 150,
+        "created_at": "2024-08-01T10:00:00Z",
+        "updated_at": "2024-08-15T12:30:00Z"
+    },
+    {
+        "id": 2,
+        "name": "Bluetooth Headphones",
+        "price": 89.99,
+        "description": "High-quality over-ear headphones with noise cancellation and Bluetooth connectivity.",
+        "category": "Electronics",
+        "stock": 80,
+        "created_at": "2024-07-20T09:30:00Z",
+        "updated_at": "2024-08-10T14:00:00Z"
+    },
+    {
+        "id": 3,
+        "name": "Leather Wallet",
+        "price": 49.99,
+        "description": "Genuine leather wallet with multiple card slots and a coin pocket.",
+        "category": "Accessories",
+        "stock": 200,
+        "created_at": "2024-07-25T08:00:00Z",
+        "updated_at": "2024-08-05T11:45:00Z"
+    },
+    {
+        "id": 4,
+        "name": "4K Ultra HD TV",
+        "price": 399.99,
+        "description": "55-inch 4K Ultra HD Smart TV with HDR and streaming apps built-in.",
+        "category": "Electronics",
+        "stock": 50,
+        "created_at": "2024-06-15T14:20:00Z",
+        "updated_at": "2024-07-01T16:35:00Z"
+    },
+    {
+        "id": 5,
+        "name": "Gaming Laptop",
+        "price": 1199.99,
+        "description": "High-performance gaming laptop with Intel i7 processor and NVIDIA graphics.",
+        "category": "Computers",
+        "stock": 25,
+        "created_at": "2024-05-10T11:00:00Z",
+        "updated_at": "2024-06-05T13:20:00Z"
+    },
+    {
+        "id": 6,
+        "name": "Stainless Steel Water Bottle",
+        "price": 19.99,
+        "description": "Durable and insulated stainless steel water bottle with 750ml capacity.",
+        "category": "Sports & Outdoors",
+        "stock": 300,
+        "created_at": "2024-07-01T10:15:00Z",
+        "updated_at": "2024-07-25T11:30:00Z"
+    },
+    {
+        "id": 7,
+        "name": "Portable Power Bank",
+        "price": 39.99,
+        "description": "10000mAh portable power bank with dual USB ports and fast charging.",
+        "category": "Electronics",
+        "stock": 120,
+        "created_at": "2024-06-20T12:00:00Z",
+        "updated_at": "2024-07-10T14:50:00Z"
+    },
+    {
+        "id": 8,
+        "name": "Smartphone Case",
+        "price": 14.99,
+        "description": "Shockproof and scratch-resistant case for the latest smartphone models.",
+        "category": "Accessories",
+        "stock": 400,
+        "created_at": "2024-05-30T09:45:00Z",
+        "updated_at": "2024-06-30T10:05:00Z"
+    },
+    {
+        "id": 9,
+        "name": "Office Chair",
+        "price": 129.99,
+        "description": "Ergonomic office chair with lumbar support and adjustable height.",
+        "category": "Furniture",
+        "stock": 75,
+        "created_at": "2024-04-25T08:30:00Z",
+        "updated_at": "2024-05-15T09:45:00Z"
+    },
+    {
+        "id": 10,
+        "name": "Wireless Charger",
+        "price": 24.99,
+        "description": "Qi-certified wireless charger compatible with all Qi-enabled devices.",
+        "category": "Electronics",
+        "stock": 250,
+        "created_at": "2024-03-15T07:50:00Z",
+        "updated_at": "2024-04-10T08:20:00Z"
+    }
+]
