@@ -1,0 +1,22 @@
+{
+  "frozen": {
+    "release-year": 2013,
+    "featured-song": "Let it go",
+    "rotten-tomatoes": 90
+  },
+  "mulan": {
+    "release-year": 1998,
+    "featured-song": "I'll make a man out of you",
+    "rotten-tomatoes": 86
+  },
+  "little-mermaid": {
+    "release-year": 1989,
+    "featured-song": "Under the sea",
+    "rotten-tomatoes": 93
+  },
+  "tarzan": {
+    "release-year": 1999,
+    "featured-song": "Youll be in my heart",
+    "rotten-tomatoes": 89
+  }
+}
