@@ -1,30 +1,54 @@
-/**
- * A webpage for fetching cute pet photos.
- * Photos will be populated on the page after the user
- * selects their desired pet type.
- */
 "use strict";
 (function() {
 
   window.addEventListener("load", init);
 
   /**
-   * TODO: What do we need to initialize?
+   * Initializes the event listeners for the radio buttons.
+   * When a radio button is selected, the `makeRequest` function is called
+   * to fetch and display the appropriate pet images.
    */
   function init() {
-    // TODO
+    let animalButtons = qsa("input[name='animal']");
+    animalButtons.forEach(button => {
+      button.addEventListener("change", makeRequest);
+    });
   }
 
   /**
-   * TODO: Fetch data from the ajax pets API!
+   * Makes an AJAX request to the Pets API based on the selected animal type
+   * (either 'kitty' or 'puppy'). The images are fetched and displayed in the
+   * #pictures div.
    */
   function makeRequest() {
-    // TODO
+    let selectedAnimal = qs("input[name='animal']:checked").value; // Get the selected animal type
+    let apiUrl = `https://hanustartup.org/wpr/api/pets/index.php?animal=${selectedAnimal}`;
+
+    fetch(apiUrl)
+      .then(statusCheck)
+      .then(res => {return res.text()})
+      .then(displayImages)
+      .catch(console.error);
   }
 
   /**
-   * TODO: Implement any other functions you need
+   * Displays the fetched pet images in the #pictures div.
+   * Clears any previously displayed images and appends new ones.
+   * @param {string} responseText - Plain text response containing the image URLs, separated by new lines.
    */
+  function displayImages(responseText) {
+    let picturesDiv = id("pictures");
+    picturesDiv.innerHTML = ''; // Clear any previous images
+    console.log(responseText)
+    console.log(typeof responseText)
+    let imageUrls = responseText.split("\n").filter(url => url.trim() !== ""); // Remove any empty lines
+    imageUrls.forEach(url => {
+      let img = document.createElement("img");
+      img.src = url;
+      img.alt = "Pet Image";
+      picturesDiv.appendChild(img);
+    });
+  }
 
   /* ------------------------------ Helper Functions  ------------------------------ */
 
@@ -54,7 +78,7 @@
   /**
    * Returns the first element that matches the given CSS selector.
    * @param {string} query - CSS query selector.
-   * @returns {object[]} array of DOM objects matching the query.
+   * @returns {object} DOM object matching the query.
    */
   function qs(query) {
     return document.querySelector(query);
@@ -68,4 +92,5 @@
   function qsa(query) {
     return document.querySelectorAll(query);
   }
+
 })();

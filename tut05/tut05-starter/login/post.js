@@ -11,7 +11,12 @@
    * TODO - setup the sign-in button on initial page load
    */
   function init() {
-    // TODO
+   
+    qs("form").addEventListener('submit', (event) => {
+      event.preventDefault();
+      signIn();
+    })
+    
   }
 
   /**
@@ -19,7 +24,25 @@
    * signIn - Signs the user in based on username and password inputs
    */
   function signIn() {
-    //TODO
+    let userName = id("username").value;
+    let passWord = id("password").value;
+    let show = id("response");
+    let url = "https://hanustartup.org/wpr/api/login.php"
+    let formData = new FormData();
+    formData.append('user', userName);
+    formData.append('password', passWord);
+    fetch("https://hanustartup.org/wpr/api/login.php", {
+
+      method: 'POST',
+      // Specify the request method
+      body: formData
+    }).then(statusCheck)
+      .then(response => response.text())
+      .then(data => {
+        id("response").innerHTML = data;
+      })
+      .catch();
+
   }
 
   /* ------------------------------ Helper Functions  ------------------------------ */
