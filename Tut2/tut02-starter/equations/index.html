@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quadratic Equation Solver</title>
+    <style>
+        body {
+            text-align: center;
+            font-weight: bold;
+        }
+        hr {
+            width: 15%;
+        }
+        button {
+            padding: 5px 15px;
+        }
+        #result {
+            margin: 15px 0;
+            color: blue;
+        }
+
+        input {
+            text-align: center;
+        }
+    </style>
+    <script src="equations.js"></script>
+</head>
+<body>
+    <h2>Quadratic Equation Solver</h2>
+    <hr>
+    <br>
+    <div>
+        <input type="number" placeholder="a" id="a" value=""> x^2 + 
+        <input type="number" placeholder="b" id="b" value=""> x + 
+        <input type="number" placeholder="c" id="c"  value=""> = 0
+    </div>
+    <br>
+    <button>Solve</button>
+    
+    <div id="result"></div>
+</body>
+</html>

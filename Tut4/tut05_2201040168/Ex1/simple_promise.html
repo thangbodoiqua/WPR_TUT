@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Promise Example</title>
+  </head>
+  <body>
+    <script>
+      // Create a promise that resolves after 5 seconds
+      const promiseOne = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("promise one is done!");
+        }, 5000); // 5 seconds
+      });
+
+      // Use .then() to log the result when the promise is fulfilled
+      promiseOne.then((message) => {
+        console.log(message);
+      });
+    </script>
+  </body>
+</html>

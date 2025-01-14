@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reject Promise on Click</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      #status {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Promise Rejecting Example</h1>
+    <button id="cancelButton">Cancel Countdown</button>
+    <div id="status">Promise will resolve in 5 seconds</div>
+
+    <script>
+      // Global variables
+      let countdown = 5;
+      let countdownInterval;
+      let isResolved = false;
+
+      // Function to start the countdown and create a promise
+      function startCountdown() {
+        return new Promise(function (resolve, reject) {
+          countdownInterval = setInterval(function () {
+            document.getElementById(
+              "status"
+            ).textContent = `Promise will resolve in ${countdown} seconds`;
+            countdown--;
+
+            if (countdown === 0) {
+              clearInterval(countdownInterval);
+              isResolved = true; // Mark as resolved
+              resolve("Promise has resolved");
+            }
+          }, 1000);
+        });
+      }
+
+      // Function to handle button click (rejecting the promise)
+      function cancelCountdown() {
+        clearInterval(countdownInterval);
+        document.getElementById("status").textContent =
+          "Promise has failed to resolve";
+      }
+
+      // Set up event listener for button click
+      document
+        .getElementById("cancelButton")
+        .addEventListener("click", function () {
+          if (!isResolved) {
+            cancelCountdown();
+          }
+        });
+
+      // Call startCountdown and handle the result of the promise
+      startCountdown().then(function (message) {
+        if (!isResolved) return; // Prevent resolving if canceled
+        document.getElementById("status").textContent = message;
+      });
+    </script>
+  </body>
+</html>

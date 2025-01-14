@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+
+        button{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>Promise resolve in 
+        <span></span>
+        second
+    </div>
+    <button>Stop</button>
+    <script>
+        let sec = document.querySelector('span');
+        sec.textContent = 5;
+        let itv = setInterval(() => {
+            sec.textContent -=1;
+        }, 1000);
+
+        let prm = new Promise((resolve, reject) => {
+            if(sec.textContent == 0){
+                resolve()
+                clearInterval(itv)
+            }
+                
+            else
+                reject()
+        });
+
+        prm
+        .then(() => {
+            sec.textContent = "promise has solved";
+        })
+
+        let btn = document.querySelector('button');
+
+
+    </script>
+</body>
+</html>

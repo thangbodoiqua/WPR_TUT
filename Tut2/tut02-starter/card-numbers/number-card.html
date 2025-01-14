@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--
+  Starter HTML for the Layout Exercise
+-->
+<html lang="en">
+  <head>
+    <title>Number Card Demo</title>
+    <link rel="stylesheet" href="number.css" />
+    <style>
+      * {
+        margin: 0;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+      #card {
+        width: 500px;
+        height: 200px;
+        border: 0.5em solid #597030;
+        border-radius: 1em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        /* flex-direction: row-reverse; */
+        /* For 3210 */
+      }
+      #card > img {
+        height: 70%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="card">
+      <img src="number-0.png" alt="Number 0 tile" style="order: 3" />
+      <img src="number-1.png" alt="Number 1 tile" style="order: 2" />
+      <img src="number-2.png" alt="Number 2 tile" style="order: 0" />
+      <img src="number-3.png" alt="Number 3 tile" style="order: 1" />
+    </div>
+  </body>
+</html>

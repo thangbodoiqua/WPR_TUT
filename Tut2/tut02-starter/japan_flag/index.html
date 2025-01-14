@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Japan Flag</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      /* without flexbox */
+      /* .outer {
+        width: 610px;
+        height: 425px;
+        border: 70px #3c3c3c solid;
+        position: relative;
+      }
+      .inner {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        border-radius: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      } */
+
+      /* with flexbox */
+      .outer {
+        width: 610px;
+        height: 425px;
+        border: 70px #3c3c3c solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .inner {
+        width: 150px;
+        height: 150px;
+        background-color: red;
+        border-radius: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner"></div>
+    </div>
+  </body>
+</html>

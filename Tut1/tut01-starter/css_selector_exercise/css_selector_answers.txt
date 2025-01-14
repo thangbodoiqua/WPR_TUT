@@ -1,0 +1,8 @@
+1. type: h2 
+2. type: #intro 
+3. type: #intro h2 
+4. type: #content h2, #footer h2 
+5. type: #content p 
+6. type: #content > p
+7. type: .bordered 
+8. type: h2.bordered 

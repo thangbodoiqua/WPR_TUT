@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        /* Basic styles for the buttons */
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stopwatch</h1>
+    <p id="display">0 seconds</p>
+    <button id="stopwatch">Start/Stop</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        let timerId = null;  
+        let currentTime = 0; 
+
+        function startTimer() {
+            timerId = setInterval(() => {
+                currentTime++;
+                console.log(currentTime + " seconds");
+                document.getElementById('display').textContent = currentTime + ' seconds';
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerId); 
+            timerId = null; 
+        }
+
+        document.getElementById('stopwatch').addEventListener('click', function() {
+            if (timerId === null) {
+                startTimer();
+            } else {
+                stopTimer();
+            }
+        });
+
+        document.getElementById('reset').addEventListener('click', function() {
+            currentTime = 0;
+            document.getElementById('display').textContent = currentTime + ' seconds'; 
+            console.log(currentTime + " seconds");
+            
+            if (timerId !== null) {
+                stopTimer(); 
+                startTimer(); 
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+body {
+  font-size: 18px;
+}
+
+#htmlcode {
+	background-color: #F8F8FF;
+	border: 1px dashed #BBBBFF;
+	margin: 0em;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	padding: 5px 15px;
+	font-family: monospace;
+  float: right; 
+  width: 60%; 
+  margin-left: 1em; 
+  color: #333; 
+}
+#htmlcodeenter {
+	width: 500px;
+	height:500px;
+}
+.selected.grey {color: LightGray; }
+.selected.red { color: Crimson; }
+.selected.blue { color: DodgerBlue; }
+.selected.green { color: DarkGreen; }
+.selected.yellow { color: GoldenRod; }
+.selected.orange { color: DarkOrange; }
+.selected.purple { color: DarkViolet; }

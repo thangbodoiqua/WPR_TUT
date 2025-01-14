@@ -1,0 +1,76 @@
+/*
+ * Provided styles for the whack-a-bug game.
+ */
+
+body {
+  background-color: blue;
+  color: white;
+  text-align: center;
+  margin: 0;
+}
+
+body, button {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 10em;
+  text-shadow: black 2px 4px 12px;
+}
+
+footer {
+  margin-top: 4em;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+}
+
+footer, #game {
+  background-color: white;
+  color: black;
+}
+
+footer, #game {
+  margin-left: 5em;
+  margin-right: 5em;
+}
+
+footer p {
+  margin-bottom: 0;
+  font-size: 1em;
+}
+
+#game {
+  border-radius: 3em;
+}
+
+#game p {
+  padding-top: 8px;
+  font-size: 2em;
+}
+
+#bug-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+}
+
+#bug-container img {
+  cursor: url("hammer.png"), pointer;
+}
+
+/* Creates seemingly-random assortment of bug sizes */
+/* The nth-of-type pseudo-selector gets all of the nth children of that tag in some parent */
+#bug-container img:nth-of-type(2n) {
+  width: 5em;
+  height: 5em;
+}
+
+#bug-container img:nth-of-type(2n+1) {
+  width: 15em;
+  height: 15em;
+}
+
+#bug-container img:nth-of-type(3n) {
+  width: 10em;
+  height: 10em;
+}

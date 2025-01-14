@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let time = 0;
+      for (let i = 3; i >= 0; i--) {
+        setTimeout(function () {
+          if (i == 0) {
+            console.log("Go!");
+          } else console.log(i);
+        }, (time += 4000));
+      }
+    </script>
+  </body>
+</html>

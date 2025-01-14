@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let promise = new Promise((resolve, reject) => {
+        let condition = false;
+
+        setTimeout(() => {
+          if (condition) {
+            resolve("Promise is done!");
+          } else {
+            reject("Promise has error");
+          }
+        }, 5000);
+      });
+
+      let asyncFunc = async () => {
+        await promise;
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      button {
+        width: 100px;
+        height: 100px;
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <button>Click here!</button>
+    <h1 id="count"></h1>
+    <script>
+      (function () {
+        window.addEventListener("load", init);
+
+        function init() {
+          let btn = document.querySelector("button");
+          console.log(btn);
+          btn.addEventListener("click", function () {
+            btn.remove();
+            let display = document.getElementById("count");
+            display.innerText = 3;
+            console.log(display.innerText);
+
+            let count = setInterval(function () {
+              if (display.innerText == 1) {
+                display.innerText = "GO!";
+                clearInterval(count);
+              } else {
+                display.innerText -= 1;
+              }
+              console.log(display.innerText);
+            }, 1000);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
