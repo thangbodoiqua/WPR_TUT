@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="display" style="text-align: center">Wait for logging...</h1>
+    <script>
+      var display = document.querySelector("#display");
+      var prm = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("Promise one is done!");
+        }, 5000);
+      });
+      function logging(data) {
+        display.innerHTML = data;
+      }
+      prm.then(logging);
+    </script>
+  </body>
+</html>
